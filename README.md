@@ -1,396 +1,264 @@
-# 🚀 MERN Job Portal — Complete Project Guide
+# 🚀 CareerLink
 
-## 📦 Tech Stack
+<div align="center">
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | React 19, Vite, TailwindCSS, react-router-dom v7 |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB (local) + Mongoose ODM |
-| **Auth** | JWT (JSON Web Tokens) stored in localStorage + httpOnly cookie |
-| **Styling** | TailwindCSS v3 + custom design system (glassmorphism, dark mode) |
-| **Icons** | lucide-react |
-| **Notifications** | react-hot-toast |
-| **HTTP Client** | Axios (with JWT interceptor) |
+### Modern MERN Stack Job Portal for Job Seekers & Recruiters
 
----
+A full-stack job portal built with the **MERN Stack** that enables recruiters to post and manage jobs while allowing job seekers to discover opportunities, apply seamlessly, and track their applications through an intuitive and responsive interface.
 
-## 📁 Project Structure
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)]()
+[![Node.js](https://img.shields.io/badge/Node.js-22-339933?logo=node.js&logoColor=white)]()
+[![Express](https://img.shields.io/badge/Express.js-000000?logo=express)]()
+[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white)]()
+[![JWT](https://img.shields.io/badge/Auth-JWT-orange)]()
+[![License](https://img.shields.io/badge/License-MIT-blue)]()
 
-```
-c:\job-portal\
-├── client/                        # React Frontend (Vite)
-│   └── src/
-│       ├── main.jsx               # App entry point
-│       ├── App.jsx                # Routes & layout
-│       ├── index.css              # Global styles (Tailwind + custom)
-│       ├── context/
-│       │   └── AuthContext.jsx    # Global auth state (user, login, logout)
-│       ├── services/              # Axios API calls
-│       │   ├── api.js             # Base Axios instance (JWT interceptor)
-│       │   ├── auth.service.js    # register, login, logout, getMe
-│       │   ├── job.service.js     # getAllJobs, getJob, createJob, etc.
-│       │   ├── application.service.js  # apply, getUserApplications, etc.
-│       │   ├── user.service.js    # getProfile, updateProfile, saveJob
-│       │   └── company.service.js # createCompany, getCompanies, etc.
-│       ├── components/            # Reusable UI components
-│       │   ├── Navbar.jsx         # Top navigation bar
-│       │   ├── JobCard.jsx        # Job listing card
-│       │   ├── FilterPanel.jsx    # Left sidebar filters
-│       │   ├── SearchBar.jsx      # Keyword + location search
-│       │   ├── DashboardCards.jsx # Admin stat cards
-│       │   ├── ProtectedRoute.jsx # Auth + role guard
-│       │   └── Spinner.jsx        # Loading spinner
-│       └── pages/
-│           ├── auth/
-│           │   ├── Login.jsx
-│           │   └── Register.jsx
-│           ├── user/              # Job Seeker pages
-│           │   ├── Home.jsx       # Browse & search jobs
-│           │   ├── JobDetail.jsx  # Single job + apply form
-│           │   ├── Profile.jsx    # Edit profile & skills
-│           │   ├── AppliedJobs.jsx # Track applications
-│           │   └── SavedJobs.jsx  # Bookmarked jobs
-│           └── admin/             # Recruiter pages
-│               ├── Dashboard.jsx  # Stats overview
-│               ├── CompanySetup.jsx # Create/edit company
-│               ├── PostJob.jsx    # Create new job listing
-│               ├── ManageJobs.jsx # Edit/delete/toggle jobs
-│               └── Applicants.jsx # Review applicants
-│
-└── server/                        # Express Backend
-    ├── server.js                  # Entry point
-    ├── .env                       # Environment variables
-    ├── config/
-    │   └── db.js                  # MongoDB connection
-    ├── models/
-    │   ├── User.model.js          # Users schema
-    │   ├── Job.model.js           # Jobs schema
-    │   ├── Application.model.js   # Applications schema
-    │   └── Company.model.js       # Companies schema
-    ├── controllers/               # Business logic
-    │   ├── auth.controller.js
-    │   ├── user.controller.js
-    │   ├── job.controller.js
-    │   ├── application.controller.js
-    │   └── company.controller.js
-    ├── routes/                    # Express route definitions
-    │   ├── auth.routes.js
-    │   ├── user.routes.js
-    │   ├── job.routes.js
-    │   ├── application.routes.js
-    │   └── company.routes.js
-    └── middleware/
-        ├── auth.middleware.js     # JWT protect + role authorize
-        └── error.middleware.js    # Global error handler
-```
+</div>
 
 ---
 
-## ⚙️ Commands to Run the Project
+# 📌 Overview
 
-### Prerequisites (install once)
+CareerLink is a modern job portal that connects recruiters with job seekers through a secure and user-friendly platform.
+
+The application provides role-based authentication, company management, job posting, application tracking, profile management, and advanced job searching—all within a responsive MERN Stack application.
+
+---
+
+# ✨ Features
+
+### 👨‍💼 Recruiter
+
+- Company Management
+- Post New Jobs
+- Edit & Delete Jobs
+- Manage Applicants
+- Update Application Status
+- Dashboard Overview
+
+### 👨‍🎓 Job Seeker
+
+- Create Account
+- Login Securely
+- Browse Jobs
+- Search & Filter Jobs
+- Save Favorite Jobs
+- Apply to Jobs
+- Track Application Status
+- Manage Personal Profile
+
+### 🔒 Security
+
+- JWT Authentication
+- Protected Routes
+- Role-Based Authorization
+- Password Encryption
+- Secure REST APIs
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React 19
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Axios
+- React Hot Toast
+- Lucide React
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+
+---
+
+
+# 🏗 Architecture
+
+```
+React
+   │
+Axios
+   │
+Express REST API
+   │
+JWT Authentication
+   │
+MongoDB
+```
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
 ```bash
-# Install server dependencies
-cd c:\job-portal\server
+git clone https://github.com/isamirwankhede/CareerLink.git
+```
+
+## Install Dependencies
+
+### Backend
+
+```bash
+cd server
 npm install
+```
 
-# Install client dependencies
-cd c:\job-portal\client
+### Frontend
+
+```bash
+cd client
 npm install
 ```
-
-### Run (every time you want to start)
-
-> Open **2 separate terminals** side by side
-
-**Terminal 1 — Backend Server:**
-```powershell
-cd c:\job-portal\server
-node server.js
-# OR with auto-restart on file changes:
-npx nodemon server.js
-```
-
-**Terminal 2 — Frontend Dev Server:**
-```powershell
-cd c:\job-portal\client
-npm run dev
-```
-
-### Access the App
-| URL | Purpose |
-|---|---|
-| http://localhost:5173 | Frontend (React app) |
-| http://localhost:5000/api/health | Backend health check |
-| http://localhost:5000/api/debug/users | View all registered users |
 
 ---
 
-## 🔐 Environment Variables (`server/.env`)
+## Configure Environment Variables
+
+Create a `.env` file inside the server folder.
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/job-portal
-JWT_SECRET=supersecretjwtkey_12345
+
+MONGO_URI=your_mongodb_connection
+
+JWT_SECRET=your_secret_key
+
 CLIENT_URL=http://localhost:5173
 ```
 
 ---
 
-## 👤 Two User Roles
+## Run the Application
 
-| Role | Who | What they can do |
-|---|---|---|
-| `user` | Job Seeker | Browse jobs, apply, save jobs, manage profile |
-| `admin` | Recruiter | Create company, post jobs, manage jobs, view applicants |
+### Backend
 
----
-
-## 🔄 Full App Flow
-
-### Flow 1 — Job Seeker (role: user)
-
-```
-Register → Login → Browse Jobs (Home) → Search/Filter
-  → Click Job Card → View Job Detail
-  → Click "Apply Now" → Fill Resume Link + Cover Letter → Submit
-  → Track status in "Applied Jobs"
-  → Bookmark jobs → View in "Saved Jobs"
-  → Edit profile/skills in "Profile"
+```bash
+npm run dev
 ```
 
-**Step by step:**
-1. Go to `/register` → fill Name, Email, Password, select **User**
-2. You're auto-logged in and redirected to `/` (Home)
-3. Browse all active job listings
-4. Use the **SearchBar** (keyword/location) or **Filter Panel** (job type, experience, category)
-5. Click any **Job Card** → goes to `/job/:id`
-6. On the Job Detail page:
-   - Click **"Apply Now"** → form slides in
-   - Optionally enter your **Resume URL** (Google Drive link etc.)
-   - Optionally write a **Cover Letter**
-   - Click **"Submit Application"**
-7. Go to **Applied** in the navbar → see all your applications + their status
-8. Go to **Saved** → see bookmarked jobs (bookmark icon on any job card)
-9. Go to **Profile** → edit your name, bio, location, phone, experience, education, skills, resume URL
+### Frontend
 
----
-
-### Flow 2 — Recruiter (role: admin)
-
-```
-Register (admin) → Login → Dashboard
-  → Company Setup → Create Company
-  → Post Job → Fill details → Submit
-  → Manage Jobs → Toggle active/inactive, Delete
-  → Applicants → Filter by job → Change status (pending/reviewing/accepted/rejected)
-```
-
-**Step by step:**
-1. Go to `/register` → fill details, select **Admin**
-2. Auto-redirected to `/admin/dashboard`
-3. **MUST DO FIRST:** Go to **Company** → click "Add Company" → fill company details → Create
-4. Go to **Post Job** → fill:
-   - Job Title, select Company, Description
-   - Location, Salary, Job Type, Experience, Category
-   - Add Skills and Requirements
-   - Click **Post Job**
-5. Go to **Manage Jobs** → see all your job listings:
-   - Toggle **Active/Closed** (closed jobs don't appear to job seekers)
-   - Click **Applicants** to filter applicants for that job
-   - **Delete** job (also removes all applications for that job)
-6. Go to **Applicants** → 
-   - Filter by specific job or view all
-   - See applicant's name, email, phone, skills, experience, resume link
-   - Change status dropdown: `pending → reviewing → accepted → rejected`
-
----
-
-## 🌐 All API Endpoints
-
-### Auth Routes (`/api/auth`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/api/auth/register` | Public | Register new user |
-| POST | `/api/auth/login` | Public | Login |
-| POST | `/api/auth/logout` | Private | Logout |
-| GET | `/api/auth/me` | Private | Get current user |
-
-### User Routes (`/api/user`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/api/user/profile` | Private | Get profile (with savedJobs populated) |
-| PUT | `/api/user/profile` | Private | Update profile |
-| PUT | `/api/user/save-job/:jobId` | User only | Toggle save/unsave job |
-
-### Job Routes (`/api/jobs`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/api/jobs` | Private | Get all active jobs (with filters) |
-| GET | `/api/jobs/admin` | Admin only | Get admin's own jobs |
-| GET | `/api/jobs/:id` | Private | Get single job detail |
-| POST | `/api/jobs` | Admin only | Create new job |
-| PUT | `/api/jobs/:id` | Admin only | Update job |
-| DELETE | `/api/jobs/:id` | Admin only | Delete job |
-
-### Application Routes (`/api`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/api/apply/:jobId` | User only | Apply for a job |
-| GET | `/api/applications` | User only | Get my applications |
-| GET | `/api/applications/admin` | Admin only | Get all applications for my jobs |
-| GET | `/api/applications/job/:jobId` | Admin only | Get applicants for specific job |
-| PUT | `/api/application/status/:id` | Admin only | Update application status |
-
-### Company Routes (`/api/company`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/api/company` | Admin only | Create company |
-| GET | `/api/company` | Admin only | Get admin's companies |
-| GET | `/api/company/:id` | Private | Get single company |
-| PUT | `/api/company/:id` | Admin only | Update company |
-
----
-
-## 🗄️ Database Collections (MongoDB)
-
-### users
-```js
-{
-  name, email, password (hashed),
-  role: "user" | "admin",
-  skills: [],
-  resume: "",          // Resume URL
-  experience: "",
-  education: "",
-  bio: "", location: "", phone: "", avatar: "",
-  savedJobs: [ObjectId]  // References to Job documents
-}
-```
-
-### jobs
-```js
-{
-  title, description, requirements: [],
-  salary, location,
-  jobType: "Full-time" | "Part-time" | "Contract" | "Internship" | "Remote",
-  experience, skills: [], category,
-  companyId: ObjectId,    // Reference to Company
-  createdBy: ObjectId,    // Reference to User (admin)
-  applicants: [ObjectId], // References to Applications
-  isActive: true
-}
-```
-
-### applications
-```js
-{
-  userId: ObjectId,     // Who applied
-  jobId: ObjectId,      // Which job
-  status: "pending" | "reviewing" | "accepted" | "rejected",
-  coverLetter: "",
-  resumeLink: ""        // Resume submitted at apply time
-}
-```
-
-### companies
-```js
-{
-  companyName, description, website,
-  location, industry, size, logo,
-  createdBy: ObjectId   // Admin who created it
-}
+```bash
+npm run dev
 ```
 
 ---
 
-## 🐚 mongosh Commands — Inspect Your Data
+# 📂 Project Structure
 
-Open a terminal and run `mongosh`, then:
-
-```js
-// Select the database
-use job-portal
-
-// View all users (without passwords)
-db.users.find({}, { password: 0 }).pretty()
-
-// View all jobs
-db.jobs.find().pretty()
-
-// View only active jobs
-db.jobs.find({ isActive: true })
-
-// View all companies
-db.companies.find().pretty()
-
-// View all applications
-db.applications.find().pretty()
-
-// View pending applications only
-db.applications.find({ status: "pending" })
-
-// Count documents in each collection
-db.users.countDocuments()
-db.jobs.countDocuments()
-db.applications.countDocuments()
-db.companies.countDocuments()
-
-// Delete all data (fresh start)
-db.users.deleteMany({})
-db.jobs.deleteMany({})
-db.applications.deleteMany({})
-db.companies.deleteMany({})
-
-// Exit mongosh
-exit
+```
+CareerLink
+│
+├── client
+│   ├── components
+│   ├── pages
+│   ├── services
+│   ├── context
+│   └── assets
+│
+├── server
+│   ├── controllers
+│   ├── routes
+│   ├── models
+│   ├── middleware
+│   └── config
 ```
 
 ---
 
-## 🔑 Authentication Flow (How JWT Works)
+# 🎯 Key Highlights
 
-```
-User logs in
-    ↓
-Server validates credentials
-    ↓
-Server creates JWT token (expires in 7 days)
-    ↓
-Token sent back in:
-  - Response body (saved to localStorage by client)
-  - httpOnly Cookie (backup)
-    ↓
-Every API request → Axios adds "Authorization: Bearer <token>"
-    ↓
-Server middleware (protect) verifies token → attaches req.user
-    ↓
-authorize('admin') or authorize('user') checks role
-```
+- Full Stack MERN Application
+- RESTful API Architecture
+- JWT Authentication
+- Role-Based Access Control
+- CRUD Operations
+- Responsive UI
+- Clean Code Structure
+- Modular Architecture
+- Protected Routes
+- Scalable Backend
 
 ---
 
-## 🚦 Application Status Flow
+# 🚀 Future Enhancements
 
-```
-User Applies → pending
-      ↓
-Admin Reviews → reviewing
-      ↓
-      ├── accepted ✅
-      └── rejected ❌
-```
+- Google Authentication
+- Resume Upload
+- Email Notifications
+- AI Resume Analysis
+- AI Job Recommendation
+- Company Verification
+- Real-Time Chat
+- Interview Scheduling
+- Dark Mode
 
 ---
 
-## ❗ Common Issues & Fixes
+# 📈 Learning Outcomes
 
-| Problem | Fix |
-|---|---|
-| `Cannot connect to MongoDB` | Run `Get-Service MongoDB` — if stopped, start it from Services |
-| White screen on frontend | Make sure `npm run dev` is running in `/client` |
-| 401 Unauthorized | Token expired — logout and login again |
-| "No Company Found" on Post Job | Create a company first under Admin → Company |
-| Port 5000 already in use | Kill the old process or change `PORT` in `.env` |
-| Data not showing | Make sure BOTH servers are running (port 5000 + 5173) |
+Through this project I strengthened my understanding of:
+
+- Full Stack Development
+- REST API Design
+- Authentication & Authorization
+- MongoDB Data Modeling
+- React State Management
+- Backend Architecture
+- Secure API Development
+- Responsive UI Design
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve CareerLink:
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
+
+---
+
+# 📬 Contact
+
+**Sameer Wankhede**
+
+GitHub:
+https://github.com/isamirwankhede
+
+LinkedIn:
+https://in.linkedin.com/in/samirwankhede
+
+Email:
+contactsamirw@gmail.com
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+It motivates me to continue building more open-source projects.
+
+---
+
+<div align="center">
+
+### Made with ❤️ by Sameer Wankhede
+
+</div>
