@@ -259,6 +259,6 @@ It motivates me to continue building more open-source projects.
 
 <div align="center">
 
-### Made with ❤️ by Sameer Wankhede
+### Made with ❤️ by Samir Wankhede
 
 </div>
